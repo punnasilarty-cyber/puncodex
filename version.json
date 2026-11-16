@@ -1,17 +1,17 @@
 {
-  "versionName": "2.0.3",
-  "versionCode": 39,
+  "versionName": "2.0.4",
+  "versionCode": 40,
   "releasedAt": "2026-11-16",
   "minVersionCode": 37,
   "apk": {
-    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v2.0.3/Pun-Codex-2.0.3-universal.apk",
+    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v2.0.4/Pun-Codex-2.0.4-universal.apk",
     "sizeBytes": 211947528,
-    "sha256": "2cb0ace460baabe29f2bcca80eacbc1a210a4bd6a8210e1be214336cff63bbdb"
+    "sha256": "fa5f161a09001d0bc07be7c62db63a5ee181dcb8c7253a81f355955f4d52c461"
   },
   "notes": [
-    "ดึงรูปจากเพจ Facebook เข้าอัลบั้มได้แล้ว เลือกจำนวน 10/25/50 รูป",
-    "ข้ามรูปที่เคยนำเข้าแล้วอัตโนมัติ และแสดงความคืบหน้าระหว่างดาวน์โหลด",
-    "เลือกรูปความละเอียดสูงสุดที่เหมาะกับคลัง (อย่างน้อย 1080px)",
+    "สร้างอัลบั้มใหม่ได้ทันทีตอนดึงรูปจากเพจ — จำแนกครั้งเดียว ไม่ต้องกลับมาแบ่งทีหลัง",
+    "ชื่ออัลบั้มตั้งต้นจากชื่อเพจและวันที่ ให้แก้ได้ก่อนสร้าง",
+    "การ์ดดึงรูปอธิบายชัดว่าต้องเลือกอัลบั้มปลายทางก่อน",
     "ยังคงต้องอัปเดตเป็น 2.0.1 ขึ้นไป (minVersionCode 37)"
   ]
 }
