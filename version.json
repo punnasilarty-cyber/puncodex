@@ -1,20 +1,21 @@
 {
-  "versionName": "1.9.6",
-  "versionCode": 30,
+  "versionName": "1.9.7",
+  "versionCode": 31,
   "releasedAt": "2026-11-16",
   "minVersionCode": 29,
   "apk": {
-    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v1.9.6/Pun-Codex-1.9.6-universal.apk",
-    "sizeBytes": 211718692,
-    "sha256": "4a6688e6cfe4728a565bd916aff341aebcbe0122fde80d7722f9b52fdaa468d7"
+    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v1.9.7/Pun-Codex-1.9.7-universal.apk",
+    "sizeBytes": 211784228,
+    "sha256": "01b334c4390627fcd8601c7bf71ec05e1d83d1c49d05382427951110cc9c3cef"
   },
   "notes": [
-    "เตรียมพร้อมสำหรับ Google Play: แอปที่ติดตั้งจาก Store จะไม่อัปเดตผ่านช่องทางในแอป",
+    "แถบแจ้งข้อมูลบอกตามจริงว่าเก็บในเครื่อง หรือซิงก์กับเซิร์ฟเวอร์โรงเรียน",
+    "ตรวจคำขอลบรูปที่รูปยังไม่มีในเครื่องได้แล้ว — ซ่อนรูปหรือปฏิเสธได้จากในแอป",
+    "หน้าทีมผู้ดูแลแจ้งชัดเจนว่า Google Client ID ตั้งค่าที่ Supabase",
+    "แอปที่ติดตั้งจาก Store จะไม่อัปเดตผ่านช่องทางในแอป",
     "ลงนาม APK ด้วย APK Signature Scheme v2 + v3",
-    "หน้าเว็บ \"ตรวจสอบไฟล์ติดตั้ง\" แสดง SHA-256, ใบรับรองนักพัฒนา และสิทธิ์ที่แอปขอ",
     "ตรวจลายเซ็นผู้พัฒนาก่อนติดตั้งอัปเดต",
     "แก้ไขการเปิด/ปิดอัลบั้มและคำค้น ให้บันทึกขึ้นเซิร์ฟเวอร์ทันที",
-    "ปุ่ม Facebook แสดงไว้แต่ยังใช้งานไม่ได้ จนกว่าจะเปิดระบบเชื่อมต่อ",
     "ครูมีสิทธิ์อัปโหลดรูป จัดการอัลบั้ม และตรวจคำขอลบรูปได้เอง"
   ]
 }
