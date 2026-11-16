@@ -1,17 +1,17 @@
 {
-  "versionName": "2.0.6",
-  "versionCode": 42,
+  "versionName": "2.0.7",
+  "versionCode": 43,
   "releasedAt": "2026-11-17",
   "minVersionCode": 37,
   "apk": {
-    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v2.0.6/Pun-Codex-2.0.6-universal.apk",
-    "sizeBytes": 212045992,
-    "sha256": "a522a9dff08319fe78a5f2edb9a55d1eb6f7a38948b7fe81a3da60552dd04d0b"
+    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v2.0.7/Pun-Codex-2.0.7-universal.apk",
+    "sizeBytes": 212062376,
+    "sha256": "be606668d9c8e869623ffcf7ecf359ee525dd2c2369837dfd5a820103a77b777"
   },
   "notes": [
-    "เชื่อมเพจ Facebook: ดึงรายชื่อเพจที่ token เข้าถึงได้ แล้วแตะเลือกได้เลย",
-    "บอกสาเหตุ code 100 ครบทุกกรณี (ชื่อเพจแทน ID / token ไม่มีสิทธิ์ / ไม่ได้เป็นแอดมิน)",
-    "แสดงสิทธิ์ที่มีในเพจ (ADMINISTRATOR/EDITOR) ก่อนเลือก",
+    "ระบบ Skeleton Loading ทั้งแอป: เห็นโครงหน้าเนื้อหาก่อนข้อมูลมา ไม่จอว่างและไม่กระพริบ",
+    "รีเฟรชแล้วเนื้อหาเดิมยังอยู่ ขึ้นแถบบางด้านบนแทนการลบทั้งจอ",
+    "โหลดผิดพลาดมีปุ่ม \"ลองอีกครั้ง\" ในกรอบเดียวกันทุกหน้า",
     "ยังคงต้องอัปเดตเป็น 2.0.1 ขึ้นไป (minVersionCode 37)"
   ]
 }
