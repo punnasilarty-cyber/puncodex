@@ -1,17 +1,17 @@
 {
-  "versionName": "2.0.4",
-  "versionCode": 40,
+  "versionName": "2.0.5",
+  "versionCode": 41,
   "releasedAt": "2026-11-16",
   "minVersionCode": 37,
   "apk": {
-    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v2.0.4/Pun-Codex-2.0.4-universal.apk",
-    "sizeBytes": 211947528,
-    "sha256": "fa5f161a09001d0bc07be7c62db63a5ee181dcb8c7253a81f355955f4d52c461"
+    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v2.0.5/Pun-Codex-2.0.5-universal.apk",
+    "sizeBytes": 211980364,
+    "sha256": "9b5b411aab42d90725cd67f8b6603df4273734e906662cff8525cde18e21b1ca"
   },
   "notes": [
-    "สร้างอัลบั้มใหม่ได้ทันทีตอนดึงรูปจากเพจ — จำแนกครั้งเดียว ไม่ต้องกลับมาแบ่งทีหลัง",
-    "ชื่ออัลบั้มตั้งต้นจากชื่อเพจและวันที่ ให้แก้ได้ก่อนสร้าง",
-    "การ์ดดึงรูปอธิบายชัดว่าต้องเลือกอัลบั้มปลายทางก่อน",
+    "ย้ายรูประหว่างอัลบั้มได้แล้ว: แตะอัลบั้ม → เลือกรูปหลายรูป → \"ย้ายไป…\"",
+    "หน้าจอผู้ดูแลจัดกลุ่มการ์ดเป็นหมวด: งานประจำวัน · คลาวด์ · การเชื่อมต่อเพจ · ระบบ",
+    "แถบเลือกทางล่างจอแสดงจำนวนที่เลือก และปุ่มล้าง/ย้าย",
     "ยังคงต้องอัปเดตเป็น 2.0.1 ขึ้นไป (minVersionCode 37)"
   ]
 }
