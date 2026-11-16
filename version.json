@@ -1,17 +1,17 @@
 {
-    "versionName":  "1.7.8",
-    "versionCode":  23,
-    "releasedAt":  "2026-11-16",
-    "minVersionCode":  0,
-    "apk":  {
-                "url":  "https://github.com/punnasilarty-cyber/puncodex/releases/download/v1.7.8/Pun-Codex-1.7.8-universal.apk",
-                "sizeBytes":  211698132,
-                "sha256":  "4a49cc657b564c3224969705ebbd16ce5fc3135248b3ff4d63b458675dd1cdf9"
-            },
-    "notes":  [
-                  "แก้ไขการเข้าสู่ระบบ Google ให้รองรับ API v7 — ครูล็อกอินผ่าน Supabase Auth",
-                  "ซิงก์รายการโปรดและคำขอลบรูปภาพข้ามอุปกรณ์ด้วยบัญชีนักเรียน",
-                  "บันทึกประวัติ audit ฝั่งฐานข้อมูลและแสดงในหน้าผู้ดูแล",
-                  "ตรวจไฟล์ APK ด้วย SHA-256 ก่อนติดตั้งอัปเดต"
-              ]
+  "versionName": "1.7.8",
+  "versionCode": 23,
+  "releasedAt": "2026-11-16",
+  "minVersionCode": 0,
+  "apk": {
+    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v1.7.8.1/Pun-Codex-1.7.8-universal.apk",
+    "sizeBytes": 211698132,
+    "sha256": "4a49cc657b564c3224969705ebbd16ce5fc3135248b3ff4d63b458675dd1cdf9"
+  },
+  "notes": [
+    "ครูลงชื่อเข้าใช้ Google ผ่าน Supabase Auth โดยคงการตรวจสอบรายชื่อและสถานะบัญชีครู",
+    "ซิงก์รายการโปรดและคำขอลบรูปภาพข้ามอุปกรณ์ด้วยรหัสนักเรียนและรูปภาพที่คงที่",
+    "บันทึกประวัติ audit ฝั่งฐานข้อมูลและแสดงในหน้าผู้ดูแล",
+    "ข้อมูลนักเรียนและรูปภาพชุดใหม่ยังไม่ถูกรวมในรุ่นนี้; API ที่ต้องพึ่ง Qoder adapter และ migration 0004 ต้องรอการตั้งค่าฝั่งเซิร์ฟเวอร์"
+  ]
 }
