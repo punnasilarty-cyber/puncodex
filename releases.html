@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ประวัติการอัปเดต Pun Codex ทุกรุ่น พร้อมวันที่และสิ่งที่เปลี่ยนแปลง"
+    />
+    <meta name="theme-color" content="#1b6b3f" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Prompt:wght@400;500;600&family=Urbanist:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./legal.css" />
+    <title>ประวัติการอัปเดต — Pun Codex</title>
+    <style>
+      .release {
+        margin-top: 18px;
+        padding: 16px 18px;
+        border: 1px solid rgba(27, 107, 63, 0.16);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.7);
+      }
+      .release-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+      .release-head strong { font-size: 15.5px; color: #0b1f14; }
+      .release-head span { font-size: 12px; color: #617a6b; }
+      .tag {
+        font-size: 11px;
+        font-weight: 600;
+        padding: 2px 9px;
+        border-radius: 999px;
+        color: #0e2a1a;
+        background: rgba(201, 162, 39, 0.25);
+      }
+      .tag-now { background: rgba(27, 107, 63, 0.14); color: #1b6b3f; }
+      .release ul { margin: 0; padding-left: 18px; }
+      .release li { font-size: 13px; line-height: 1.65; margin-bottom: 5px; }
+      .release a { color: #1b6b3f; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="./">
+          <span class="brand-mark" aria-hidden="true">P<b>C</b></span>
+          <strong>Pun <em>Codex</em></strong>
+        </a>
+        <a class="back" href="./">กลับหน้าแรก</a>
+      </header>
+
+      <h1>ประวัติการอัปเดต</h1>
+      <p class="lead">
+        ทุกรุ่นที่เผยแพร่ พร้อมวันที่และสิ่งที่เปลี่ยนแปลง — ไฟล์ติดตั้งของแต่ละรุ่นอยู่ใน
+        <a href="https://github.com/punnasilarty-cyber/puncodex/releases">GitHub Releases</a>
+        และตรวจสอบได้ที่ <a href="./verify.html">หน้าตรวจสอบไฟล์ติดตั้ง</a>
+      </p>
+
+      <div id="releases">
+        <article class="release">
+          <div class="release-head">
+            <strong>2.0.1</strong>
+            <span>16 พ.ย. 2569 · versionCode 37</span>
+            <span class="tag tag-now">บังคับอัปเดต</span>
+          </div>
+          <ul>
+            <li>ถอดระบบ "ดัชนีออนไลน์" ของเซิร์ฟเวอร์รุ่นเก่าออก — อัลบั้มอยู่ในฐานข้อมูลโรงเรียนแล้ว</li>
+            <li>บังคับอัปเดต: ทุกเครื่องต้องเป็น 2.0.1 ขึ้นไปจึงใช้งานได้</li>
+            <li>ย้าย SQL รุ่นเก่าไป <code>supabase/legacy</code> พร้อมคำเตือน ห้ามรันบนฐานจริง</li>
+          </ul>
+        </article>
+
+        <article class="release">
+          <div class="release-head">
+            <strong>2.0.0</strong>
+            <span>16 พ.ย. 2569 · versionCode 36</span>
+          </div>
+          <ul>
+            <li>รุ่นหลัก 2.0 — ย้ายระบบทั้งหมดขึ้นฐานข้อมูลของโรงเรียน</li>
+            <li>เพิ่มหน้าตรวจการเชื่อมต่อ API และหน้าประวัติการอัปเดตในแอป</li>
+            <li>ไฟล์อัปเดตใช้ชื่อ <code>Pun-Codex-&lt;เวอร์ชัน&gt;.apk</code></li>
+          </ul>
+        </article>
+
+        <article class="release">
+          <div class="release-head">
+            <strong>1.9.5</strong>
+            <span>16 พ.ย. 2569 · versionCode 29</span>
+          </div>
+          <ul>
+            <li>ลงนาม APK ด้วย APK Signature Scheme v2 + v3</li>
+            <li>เปิดหน้าเว็บ "ตรวจสอบไฟล์ติดตั้ง" และลิงก์ VirusTotal ตามค่า SHA-256</li>
+          </ul>
+        </article>
+
+        <article class="release">
+          <div class="release-head">
+            <strong>1.9.4</strong>
+            <span>16 พ.ย. 2569 · versionCode 28</span>
+          </div>
+          <ul>
+            <li>แอปตรวจลายเซ็นผู้พัฒนาก่อนติดตั้งอัปเดต</li>
+            <li>ถอดสิทธิ์ไบโอเมตริก/ลายนิ้วมือ และ Play Install Referrer ที่ไม่ได้ใช้</li>
+          </ul>
+        </article>
+
+        <article class="release">
+          <div class="release-head">
+            <strong>1.9.1 – 1.9.3</strong>
+            <span>16 พ.ย. 2569</span>
+          </div>
+          <ul>
+            <li>ครูมีสิทธิ์อัปโหลด จัดการอัลบั้ม และตรวจคำขอลบรูปเอง</li>
+            <li>ล็อกบัญชีชั่วคราว 15 นาที เมื่อพิมพ์ PIN ผิดติดกัน 5 ครั้ง</li>
+            <li>แก้การเปิด/ปิดอัลบั้มและคำค้นให้บันทึกขึ้นเซิร์ฟเวอร์ทันที</li>
+          </ul>
+        </article>
+
+        <article class="release">
+          <div class="release-head">
+            <strong>1.9.0</strong>
+            <span>16 พ.ย. 2569 · versionCode 24</span>
+          </div>
+          <ul>
+            <li>เริ่มใช้ Supabase สำหรับบัญชีครู/นักเรียน การซิงก์ และสิทธิ์การเข้าถึง</li>
+          </ul>
+        </article>
+
+        <article class="release">
+          <div class="release-head">
+            <strong>1.7.8</strong>
+            <span>16 พ.ย. 2569 · versionCode 23</span>
+          </div>
+          <ul>
+            <li>ครูเข้าสู่ระบบด้วย Google ตามรายชื่อที่โรงเรียนอนุมัติ</li>
+            <li>เริ่มตรวจ SHA-256 ของไฟล์ APK ก่อนติดตั้งอัปเดต</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="muted" style="color: #617a6b; font-size: 12.5px; margin-top: 22px">
+        หมายเหตุ: รุ่นก่อน 1.7.8 เป็นการพัฒนาภายในและไม่ได้เผยแพร่บนเว็บนี้
+      </p>
+    </div>
+  </body>
+</html>
