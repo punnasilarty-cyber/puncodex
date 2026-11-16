@@ -1,17 +1,17 @@
 {
-  "versionName": "1.7.5",
-  "versionCode": 20,
+  "versionName": "1.7.6",
+  "versionCode": 21,
   "releasedAt": "2026-11-16",
   "minVersionCode": 0,
   "apk": {
-    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v1.7.5/Pun-Codex-1.7.5-universal.apk",
-    "sizeBytes": 209457747,
-    "sha256": "09ab3cf6e086cec3c278e0fb40ca7626f867f80436a09074eae827ff493609e9"
+    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v1.7.6/Pun-Codex-1.7.6-universal.apk",
+    "sizeBytes": 209457743,
+    "sha256": "6cbceeaaf43f9681dab56ff113d0bdc7aaa5f74e37ccf8897a71f5862ba6507e"
   },
   "notes": [
+    "เปลี่ยนกุญแจลงนามแอปให้ถูกต้อง — ต้องถอนแอปเดิมแล้วติดตั้งใหม่หนึ่งครั้ง",
     "ย้ายเว็บไซต์ไปที่ลิงก์ใหม่ พร้อมใช้งานทันที",
     "ดาวน์โหลด APK ได้โดยตรงจากหน้าเว็บ",
-    "ย้ายเว็บไซต์เป็น Pun Codex พร้อมที่อยู่ใหม่",
     "เพิ่มปุ่มเว็บไซต์ของเราในหน้าตั้งค่า เปิดเว็บ Pun Codex ได้โดยตรง",
     "อัปเดตแอปได้ในแอป ตรวจไฟล์ด้วย SHA-256 ก่อนติดตั้ง"
   ]
