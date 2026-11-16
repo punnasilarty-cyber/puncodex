@@ -1,17 +1,17 @@
 {
-  "versionName": "1.9.1",
-  "versionCode": 25,
+  "versionName": "1.9.2",
+  "versionCode": 26,
   "releasedAt": "2026-11-16",
-  "minVersionCode": 25,
+  "minVersionCode": 26,
   "apk": {
-    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v1.9.1/Pun-Codex-1.9.1-universal.apk",
-    "sizeBytes": 211698132,
-    "sha256": "260c9fd0f711ea2a3eb586039cfcd971d6dae94c72f5f63bc42e90ed96c95a24"
+    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v1.9.2/Pun-Codex-1.9.2-universal.apk",
+    "sizeBytes": 211698196,
+    "sha256": "5a600bba060acd4cc196eb4d6b5c67de424358cd22de98a9accab97034346953"
   },
   "notes": [
+    "เพิ่มปุ่ม \"เข้าสู่ระบบผ่านเบราว์เซอร์\" สำหรับเครื่องที่ปุ่ม Google ไม่ทำงาน",
     "ต้องอัปเดตให้เป็นรุ่นล่าสุดก่อนใช้งาน — รุ่นเก่าจะถูกบล็อกจนกว่าจะอัปเดต",
     "ปุ่ม Facebook แสดงไว้แต่ยังใช้งานไม่ได้ จนกว่าจะเปิดระบบเชื่อมต่อ",
-    "บอกสาเหตุชัดขึ้นเมื่อ Google Login ถูกยกเลิกหรือยังตั้งค่าไม่ครบ",
     "ครูและผู้ดูแลเข้าสู่ระบบด้วย Google ผ่าน Supabase Auth ตามรายชื่อที่โรงเรียนอนุมัติ",
     "ครูมีสิทธิ์อัปโหลดรูป จัดการอัลบั้ม และตรวจคำขอลบรูปได้เอง",
     "ล็อกบัญชีชั่วคราว 15 นาที เมื่อพิมพ์ PIN ผิดติดกัน 5 ครั้ง",
