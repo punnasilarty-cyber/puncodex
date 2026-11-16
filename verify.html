@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ตรวจสอบไฟล์ติดตั้ง Pun Codex — เวอร์ชัน SHA-256 ใบรับรองนักพัฒนา และสิทธิ์ที่แอปขอ"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Prompt:wght@400;500;600&family=Urbanist:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./legal.css" />
+    <title>ตรวจสอบไฟล์ติดตั้ง — Pun Codex</title>
+    <style>
+      .verify-grid { display: grid; gap: 10px; margin-top: 14px; }
+      .row {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 10px;
+        align-items: start;
+        padding: 10px 0;
+        border-bottom: 1px dashed rgba(27, 107, 63, 0.18);
+      }
+      .row:last-child { border-bottom: 0; }
+      .row dt { font-weight: 600; font-size: 13px; color: #0b1f14; }
+      .row dd { margin: 0; font-size: 13px; line-height: 1.6; word-break: break-all; }
+      code.mono {
+        font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 12px;
+        background: #eef6ef;
+        border-radius: 6px;
+        padding: 2px 6px;
+      }
+      .copy {
+        margin-left: 8px;
+        font-size: 11px;
+        border: 1px solid rgba(27, 107, 63, 0.35);
+        background: #fff;
+        color: #1b6b3f;
+        border-radius: 999px;
+        padding: 2px 10px;
+        cursor: pointer;
+      }
+      .copy:hover { background: #eef6ef; }
+      table.perm { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
+      table.perm th, table.perm td {
+        text-align: left;
+        padding: 8px 6px;
+        border-bottom: 1px solid rgba(27, 107, 63, 0.14);
+        vertical-align: top;
+      }
+      table.perm th { font-size: 12px; color: #35513f; font-weight: 600; }
+      pre.cmd {
+        background: #0b1f14;
+        color: #d7f1e3;
+        border-radius: 12px;
+        padding: 12px 14px;
+        overflow-x: auto;
+        font-size: 12px;
+        line-height: 1.7;
+      }
+      .warn {
+        margin-top: 12px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: #fdf3d7;
+        border: 1px solid rgba(244, 196, 48, 0.5);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      .muted { color: #617a6b; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="./">
+          <span class="brand-mark" aria-hidden="true">P<b>C</b></span>
+          <strong>Pun <em>Codex</em></strong>
+        </a>
+        <a class="back" href="./">กลับหน้าแรก</a>
+      </header>
+
+      <h1>ตรวจสอบไฟล์ติดตั้ง</h1>
+      <p class="lead">
+        หน้านี้แสดงข้อมูลของไฟล์ APK ที่เว็บไซต์แจกจ่ายอยู่จริง เพื่อให้ครู ผู้ปกครอง
+        หรือฝ่ายไอทีของโรงเรียนตรวจสอบได้ก่อนติดตั้ง
+      </p>
+
+      <article>
+        <h2>รุ่นที่แจกอยู่ในขณะนี้</h2>
+        <dl class="verify-grid" id="release">
+          <div class="row"><dt>เวอร์ชัน</dt><dd><span id="v-name">—</span> <span class="muted">(<span id="v-code">—</span>)</span></dd></div>
+          <div class="row"><dt>วันที่ออกรุ่น</dt><dd id="v-date">—</dd></div>
+          <div class="row"><dt>ขนาดไฟล์</dt><dd><span id="v-size">—</span> ไบต์</dd></div>
+          <div class="row">
+            <dt>SHA-256</dt>
+            <dd>
+              <code class="mono" id="v-sha">—</code>
+              <button class="copy" type="button" data-copy="v-sha">คัดลอก</button>
+              <a id="v-vt" href="https://www.virustotal.com/" target="_blank" rel="noopener noreferrer">ดูผลสแกนบน VirusTotal</a>
+            </dd>
+          </div>
+          <div class="row"><dt>ลิงก์ดาวน์โหลด</dt><dd><a id="v-url" href="#" target="_blank" rel="noopener noreferrer">—</a></dd></div>
+        </dl>
+        <p class="muted" id="v-error" hidden>โหลดข้อมูลรุ่นไม่สำเร็จ กรุณาลองใหม่ภายหลัง</p>
+      </article>
+
+      <article>
+        <h2>ใบรับรองนักพัฒนา (signing certificate)</h2>
+        <p>
+          ไฟล์ที่โรงเรียนควรติดตั้งต้องลงนามด้วยใบรับรองนี้เท่านั้น — แอปเองก็ตรวจค่านี้
+          ก่อนติดตั้งอัปเดตทุกครั้ง
+        </p>
+        <dl class="verify-grid">
+          <div class="row">
+            <dt>SHA-256 ของใบรับรอง</dt>
+            <dd>
+              <code class="mono">db76f762330962a48a20a325fffb4921e6a22e835173990ac91686c1eae6bf8c</code>
+              <button class="copy" type="button" data-copy-text="db76f762330962a48a20a325fffb4921e6a22e835173990ac91686c1eae6bf8c">คัดลอก</button>
+            </dd>
+          </div>
+          <div class="row"><dt>ชื่อในใบรับรอง</dt><dd><code class="mono">CN=Punnasin, OU=Pun Codex, O=Pun Codex, C=TH</code></dd></div>
+          <div class="row"><dt>Package</dt><dd><code class="mono">com.puncodex.app</code> · minSdk 24 · targetSdk 36</dd></div>
+          <div class="row"><dt>รูปแบบลายเซ็น</dt><dd>APK Signature Scheme v2 + v3</dd></div>
+        </dl>
+      </article>
+
+      <article>
+        <h2>สิทธิ์ที่แอปขอ และใช้ทำอะไร</h2>
+        <table class="perm">
+          <thead>
+            <tr><th>สิทธิ์</th><th>ใช้ทำอะไร</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code class="mono">INTERNET</code></td><td>โหลดรูปและซิงก์กับเซิร์ฟเวอร์ของโรงเรียน รวมถึงตรวจหาอัปเดต</td></tr>
+            <tr><td><code class="mono">REQUEST_INSTALL_PACKAGES</code></td><td>ติดตั้งอัปเดตที่ผู้ใช้กดยืนยันเองในแอป</td></tr>
+            <tr><td><code class="mono">ACCESS_NETWORK_STATE</code></td><td>ตรวจว่าออนไลน์อยู่ก่อนเริ่มซิงก์</td></tr>
+            <tr><td><code class="mono">READ/WRITE_EXTERNAL_STORAGE</code></td><td>บันทึกรูปที่ครูลงคลังอุปกรณ์ (เฉพาะ Android 10 ลงมา)</td></tr>
+          </tbody>
+        </table>
+        <p class="muted">
+          ไม่มีสิทธิ์กล้อง mikrofon ตำแหน่ง ผู้ติดต่อ หรือโฆษณา · สิทธิ์ไบโอเมตริก/ลายนิ้วมือ
+          และ Play Install Referrer ถูกถอดออกตั้งแต่รุ่น 1.9.4
+        </p>
+      </article>
+
+      <article>
+        <h2>วิธีตรวจสอบบนเครื่องคอมพิวเตอร์</h2>
+        <pre class="cmd"># 1) เทียบ SHA-256 กับค่าที่หน้านี้แสดง
+Get-FileHash .\Pun-Codex-<version>-universal.apk -Algorithm SHA256
+
+# 2) ตรวจใบรับรองนักพัฒนา (ต้องมี Android build-tools)
+apksigner verify --print-certs .\Pun-Codex-<version>-universal.apk</pre>
+        <p class="muted">
+          ถ้าค่าใดค่าไม่ตรง ห้ามติดตั้ง — ให้แจ้งผู้ดูแลระบบของโรงเรียน
+        </p>
+        <div class="warn">
+          <strong>ยังไม่ได้เผยแพร่บน Google Play</strong> — แอปแจกเป็นไฟล์ APK โดยตรง
+          เครื่องมือบางรุ่นจะเตือนว่าเป็น "แหล่งที่มาไม่รู้จัก" หรือ Play Protect อาจสแกนก่อนติดตั้ง
+          การตรวจ SHA-256 และใบรับรองข้างบนคือวิธีที่โรงเรียนยืนยันได้ว่าไฟล์มาจากเรา
+        </div>
+      </article>
+    </div>
+
+    <script>
+      (function () {
+        const byId = (id) => document.getElementById(id);
+        const sha = byId('v-sha');
+
+        document.querySelectorAll('button.copy').forEach((button) => {
+          button.addEventListener('click', async () => {
+            const id = button.dataset.copy;
+            const text = id ? byId(id).textContent.trim() : button.dataset.copyText;
+            try {
+              await navigator.clipboard.writeText(text);
+              const original = button.textContent;
+              button.textContent = 'คัดลอกแล้ว';
+              setTimeout(() => { button.textContent = original; }, 1500);
+            } catch (_) {
+              window.prompt('คัดลอกด้วยตนเอง', text);
+            }
+          });
+        });
+
+        fetch('./version.json?t=' + Date.now(), { cache: 'no-store' })
+          .then((response) => {
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            return response.json();
+          })
+          .then((manifest) => {
+            const apk = manifest.apk || {};
+            byId('v-name').textContent = manifest.versionName || '—';
+            byId('v-code').textContent = manifest.versionCode ?? '—';
+            byId('v-date').textContent = manifest.releasedAt || '—';
+            byId('v-size').textContent = apk.sizeBytes
+              ? Number(apk.sizeBytes).toLocaleString('en-US')
+              : '—';
+            sha.textContent = apk.sha256 || '—';
+            const url = byId('v-url');
+            if (apk.url) {
+              url.textContent = apk.url;
+              url.href = apk.url;
+            }
+            const vt = byId('v-vt');
+            if (apk.sha256) {
+              vt.href = 'https://www.virustotal.com/gui/file/' + apk.sha256;
+            }
+          })
+          .catch(() => {
+            byId('v-error').hidden = false;
+          });
+      })();
+    </script>
+  </body>
+</html>
