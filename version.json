@@ -1,19 +1,17 @@
 {
-  "versionName": "2.0.1",
-  "versionCode": 37,
+  "versionName": "2.0.2",
+  "versionCode": 38,
   "releasedAt": "2026-11-16",
   "minVersionCode": 37,
   "apk": {
-    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v2.0.1/Pun-Codex-2.0.1-universal.apk",
-    "sizeBytes": 211357552,
-    "sha256": "f24f12f025e1c58b3d75be3eb865df172f8458c65639142388c686fc00a09b6f"
+    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v2.0.2/Pun-Codex-2.0.2-universal.apk",
+    "sizeBytes": 211456008,
+    "sha256": "3e0ede08c29b5bace40f080228cd76464fddf009ebfad0dcb6128522f2c58629"
   },
   "notes": [
-    "บังคับอัปเดต: ทุกเครื่องต้องเป็น 2.0.1 ขึ้นไปจึงใช้งานได้",
-    "ถอดระบบ \"ดัชนีออนไลน์\" ของเซิร์ฟเวอร์รุ่นเก่าออก — อัลบั้มอยู่ใน Supabase แล้ว",
-    "ย้าย SQL รุ่นเก่าไป supabase/legacy พร้อมคำเตือน ห้ามรันบนฐานจริง",
-    "เพิ่มชุดทดสอบประวัติการอัปเดตและการปิดคีย์ (138 tests)",
-    "หน้า \"เชื่อมต่อ API\" และ \"ประวัติการอัปเดต\" ยังอยู่ครบ",
-    "ลงนาม APK v2 + v3 · ตรวจลายเซ็นผู้พัฒนาก่อนติดตั้งอัปเดต"
+    "เชื่อมเพจ Facebook ได้ในแอป: ตรวจ token กับ Graph API แล้วบันทึกการเชื่อมต่อ",
+    "แสดงชื่อเพจ จำนวนรูปที่เข้าถึงได้ และผู้ติดตาม ก่อนบันทึก",
+    "ยกเลิกการเชื่อมต่อได้ และ token ถูกปิดบางส่วนเมื่อแสดงผล",
+    "ยังคงต้องอัปเดตเป็น 2.0.1 ขึ้นไป (minVersionCode 37)"
   ]
 }
