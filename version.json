@@ -1,17 +1,17 @@
 {
-  "versionName": "2.0.5",
-  "versionCode": 41,
-  "releasedAt": "2026-11-16",
+  "versionName": "2.0.6",
+  "versionCode": 42,
+  "releasedAt": "2026-11-17",
   "minVersionCode": 37,
   "apk": {
-    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v2.0.5/Pun-Codex-2.0.5-universal.apk",
-    "sizeBytes": 211980364,
-    "sha256": "9b5b411aab42d90725cd67f8b6603df4273734e906662cff8525cde18e21b1ca"
+    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v2.0.6/Pun-Codex-2.0.6-universal.apk",
+    "sizeBytes": 212045992,
+    "sha256": "a522a9dff08319fe78a5f2edb9a55d1eb6f7a38948b7fe81a3da60552dd04d0b"
   },
   "notes": [
-    "ย้ายรูประหว่างอัลบั้มได้แล้ว: แตะอัลบั้ม → เลือกรูปหลายรูป → \"ย้ายไป…\"",
-    "หน้าจอผู้ดูแลจัดกลุ่มการ์ดเป็นหมวด: งานประจำวัน · คลาวด์ · การเชื่อมต่อเพจ · ระบบ",
-    "แถบเลือกทางล่างจอแสดงจำนวนที่เลือก และปุ่มล้าง/ย้าย",
+    "เชื่อมเพจ Facebook: ดึงรายชื่อเพจที่ token เข้าถึงได้ แล้วแตะเลือกได้เลย",
+    "บอกสาเหตุ code 100 ครบทุกกรณี (ชื่อเพจแทน ID / token ไม่มีสิทธิ์ / ไม่ได้เป็นแอดมิน)",
+    "แสดงสิทธิ์ที่มีในเพจ (ADMINISTRATOR/EDITOR) ก่อนเลือก",
     "ยังคงต้องอัปเดตเป็น 2.0.1 ขึ้นไป (minVersionCode 37)"
   ]
 }
