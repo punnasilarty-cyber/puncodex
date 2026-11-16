@@ -1,17 +1,17 @@
 {
-  "versionName": "2.0.2",
-  "versionCode": 38,
+  "versionName": "2.0.3",
+  "versionCode": 39,
   "releasedAt": "2026-11-16",
   "minVersionCode": 37,
   "apk": {
-    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v2.0.2/Pun-Codex-2.0.2-universal.apk",
-    "sizeBytes": 211456008,
-    "sha256": "3e0ede08c29b5bace40f080228cd76464fddf009ebfad0dcb6128522f2c58629"
+    "url": "https://github.com/punnasilarty-cyber/puncodex/releases/download/v2.0.3/Pun-Codex-2.0.3-universal.apk",
+    "sizeBytes": 211947528,
+    "sha256": "2cb0ace460baabe29f2bcca80eacbc1a210a4bd6a8210e1be214336cff63bbdb"
   },
   "notes": [
-    "เชื่อมเพจ Facebook ได้ในแอป: ตรวจ token กับ Graph API แล้วบันทึกการเชื่อมต่อ",
-    "แสดงชื่อเพจ จำนวนรูปที่เข้าถึงได้ และผู้ติดตาม ก่อนบันทึก",
-    "ยกเลิกการเชื่อมต่อได้ และ token ถูกปิดบางส่วนเมื่อแสดงผล",
+    "ดึงรูปจากเพจ Facebook เข้าอัลบั้มได้แล้ว เลือกจำนวน 10/25/50 รูป",
+    "ข้ามรูปที่เคยนำเข้าแล้วอัตโนมัติ และแสดงความคืบหน้าระหว่างดาวน์โหลด",
+    "เลือกรูปความละเอียดสูงสุดที่เหมาะกับคลัง (อย่างน้อย 1080px)",
     "ยังคงต้องอัปเดตเป็น 2.0.1 ขึ้นไป (minVersionCode 37)"
   ]
 }
