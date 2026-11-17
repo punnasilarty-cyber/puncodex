@@ -1,10 +1,10 @@
 {
   "app": "puncodex-webapp",
   "runtime": "react",
-  "version": "1.20.0",
+  "version": "1.20.1",
   "replaces": "flutter-web",
-  "builtAt": "2026-11-17T12:12:28Z",
-  "sourceCommit": "ea17a92",
+  "builtAt": "2026-11-17T12:21:45Z",
+  "sourceCommit": "a8bbbdb",
   "bytes": 8718802,
   "files": [
     "assets/face-api.esm-DMaQY5kn.js",
