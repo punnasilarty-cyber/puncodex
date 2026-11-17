@@ -3,12 +3,12 @@
   "runtime": "react",
   "version": "1.0.0",
   "replaces": "flutter-web",
-  "builtAt": "2026-11-17T05:32:46Z",
-  "sourceCommit": "54ab6db",
-  "bytes": 505628,
+  "builtAt": "2026-11-17T05:43:54Z",
+  "sourceCommit": "32e967a",
+  "bytes": 511390,
   "files": [
-    "assets/index-CPIBb24N.js",
-    "assets/index-DwshJML9.css",
+    "assets/index-CuVqUP-W.js",
+    "assets/index-D3gfAGfH.css",
     "assets/supabase-D5xPhma_.js",
     "assets/vendor-BRnhmgIC.js",
     "index.html"
