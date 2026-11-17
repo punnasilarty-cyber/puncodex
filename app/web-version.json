@@ -1,16 +1,16 @@
 {
-    "app":  "puncodex-webapp",
-    "runtime":  "react",
-    "version":  "1.0.0",
-    "replaces":  "flutter-web",
-    "builtAt":  "2026-11-17T05:13:25Z",
-    "sourceCommit":  "757deb0",
-    "bytes":  500690,
-    "files":  [
-                  "assets/index-COor0sdz.js",
-                  "assets/index-DdUSK8uE.css",
-                  "assets/supabase-D5xPhma_.js",
-                  "assets/vendor-BRnhmgIC.js",
-                  "index.html"
-              ]
+  "app": "puncodex-webapp",
+  "runtime": "react",
+  "version": "1.0.0",
+  "replaces": "flutter-web",
+  "builtAt": "2026-11-17T05:32:46Z",
+  "sourceCommit": "54ab6db",
+  "bytes": 505628,
+  "files": [
+    "assets/index-CPIBb24N.js",
+    "assets/index-DwshJML9.css",
+    "assets/supabase-D5xPhma_.js",
+    "assets/vendor-BRnhmgIC.js",
+    "index.html"
+  ]
 }
