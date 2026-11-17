@@ -1,14 +1,14 @@
 {
   "app": "puncodex-webapp",
   "runtime": "react",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "replaces": "flutter-web",
-  "builtAt": "2026-11-17T06:24:22Z",
-  "sourceCommit": "0d8bebb",
-  "bytes": 544696,
+  "builtAt": "2026-11-17T06:28:34Z",
+  "sourceCommit": "ad59dca",
+  "bytes": 545774,
   "files": [
-    "assets/index-CihyRZMh.js",
-    "assets/index-DL7Q1odA.css",
+    "assets/index-D_zZQVGh.js",
+    "assets/index-DOOvd0Mg.css",
     "assets/supabase-D5xPhma_.js",
     "assets/vendor-BRnhmgIC.js",
     "index.html"
