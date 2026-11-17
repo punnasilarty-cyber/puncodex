@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เข้าสู่ระบบ — Pun Codex</title>
+<meta name="description" content="เข้าสู่ระบบ Pun Codex ด้วยบัญชี Google ของโรงเรียน หรือรหัสนักเรียน">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Prompt:wght@400;500;600&family=Urbanist:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0b1f14; --ink-soft: #35513f; --muted: #617a6b;
+    --green: #1b6b3f; --green-deep: #0e2a1a; --mint: #5ccf92; --gold: #f4c430;
+    --bg: #f2f8f2; --surface: rgba(255,255,255,.78); --line: rgba(27,107,63,.14);
+    --font-body: "Inter", "Prompt", system-ui, sans-serif;
+    --font-display: "Urbanist", "Prompt", system-ui, sans-serif;
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; color: var(--ink);
+    font-family: var(--font-body); line-height: 1.6;
+    background:
+      radial-gradient(900px 620px at 6% -12%, rgba(244,196,48,.16), transparent 62%),
+      radial-gradient(820px 720px at 102% 8%, rgba(92,207,146,.20), transparent 64%),
+      var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image: radial-gradient(rgba(27,107,63,.16) 1px, transparent 1px);
+    background-size: 24px 24px; opacity: .45;
+    -webkit-mask-image: radial-gradient(1100px 720px at 52% 38%, #000 10%, transparent 74%);
+    mask-image: radial-gradient(1100px 720px at 52% 38%, #000 10%, transparent 74%);
+  }
+  a { color: var(--green); }
+
+  .topbar {
+    position: relative; z-index: 2; display: flex; align-items: center; gap: 14px;
+    padding: 16px 32px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+  .brand-mark {
+    width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center;
+    background: linear-gradient(160deg, #17422f, var(--green-deep));
+    color: #fff; font-family: var(--font-display); font-weight: 800; font-size: 13px;
+  }
+  .brand-text { font-family: var(--font-display); font-weight: 700; font-size: 15.5px; }
+  .brand-text span { color: var(--green); }
+  .topbar .spacer { flex: 1; }
+  .topbar .link { font-size: 13.5px; text-decoration: none; color: var(--ink-soft); }
+  .topbar .link:hover { color: var(--green-deep); }
+
+  .layout {
+    position: relative; z-index: 1;
+    max-width: 1120px; margin: 0 auto; padding: 8px 24px 64px;
+    display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center;
+    min-height: calc(100vh - 140px);
+  }
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; gap: 28px; padding: 8px 18px 48px; min-height: 0; }
+    .brand-panel { order: 2; }
+  }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 13px; border-radius: 999px; border: 1px solid var(--line);
+    background: rgba(255,255,255,.72); color: var(--green);
+    font-size: 12.5px; font-weight: 600; letter-spacing: .06em;
+  }
+  .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 4px rgba(92,207,146,.18); }
+  h1 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(30px, 4vw, 46px); line-height: 1.14; letter-spacing: -.02em;
+    margin: 16px 0 10px;
+  }
+  h1 em { font-style: normal; color: var(--green); }
+  .lede { color: var(--ink-soft); font-size: 15px; margin: 0 0 20px; max-width: 460px; }
+  .points { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  .points li { display: flex; gap: 10px; font-size: 13.5px; color: var(--ink-soft); }
+  .points b { display: block; color: var(--ink); font-size: 14px; }
+  .points .tick { color: var(--green); flex: none; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 24px;
+    padding: 30px 30px 22px; box-shadow: 0 24px 60px -46px rgba(11,31,20,.6);
+    backdrop-filter: blur(8px);
+  }
+  .card h2 { font-family: var(--font-display); font-size: 26px; margin: 0 0 6px; letter-spacing: -.01em; }
+  .card .sub { color: var(--muted); font-size: 13.5px; margin: 0 0 22px; }
+
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; height: 52px; border: 0; border-radius: 999px;
+    font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer;
+    transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease);
+  }
+  .btn-primary { background: var(--green-deep); color: #fff; }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -16px rgba(11,31,20,.85); }
+  .btn-ghost { background: rgba(255,255,255,.6); color: var(--green-deep); border: 1px solid var(--line); }
+  .btn-ghost:hover { background: #fff; }
+  .btn[disabled] { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+  .gmark {
+    width: 22px; height: 22px; border-radius: 50%; background: #fff;
+    display: grid; place-items: center; color: #1a73e8; font-weight: 700; font-size: 13px;
+  }
+
+  .divider { display: flex; align-items: center; gap: 12px; margin: 16px 0; color: var(--muted); font-size: 11.5px; }
+  .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  label.field { display: block; margin-bottom: 12px; }
+  label.field span { display: block; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+  input[type="text"], input[type="password"] {
+    width: 100%; height: 48px; padding: 0 14px;
+    border: 1px solid var(--line); border-radius: 14px;
+    background: #fff; font-family: inherit; font-size: 15px; color: var(--ink);
+    transition: border-color .18s var(--ease), box-shadow .18s var(--ease);
+  }
+  input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 4px rgba(92,207,146,.18); }
+  .helper { display: block; font-size: 11.5px; color: var(--muted); margin-top: 5px; }
+
+  .consent { display: flex; gap: 10px; align-items: flex-start; margin: 16px 0 4px; font-size: 12.5px; color: var(--muted); }
+  .consent input { margin-top: 3px; width: 17px; height: 17px; accent-color: var(--green); }
+  .consent a { color: var(--green); font-weight: 600; }
+
+  .alert {
+    display: none; gap: 10px; align-items: flex-start;
+    margin-top: 14px; padding: 11px 13px; border-radius: 12px;
+    background: rgba(179,38,30,.08); border: 1px solid rgba(179,38,30,.28);
+    color: #8f2018; font-size: 12.5px;
+  }
+  .alert.show { display: flex; }
+
+  .foot { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); text-align: center; }
+  .foot a { font-size: 12.5px; margin: 0 8px; text-decoration: none; }
+  .foot .ver { display: block; margin-top: 8px; font-size: 11px; color: var(--muted); }
+
+  .spinner {
+    width: 18px; height: 18px; border-radius: 50%;
+    border: 2.5px solid rgba(255,255,255,.35); border-top-color: #fff;
+    animation: spin .8s linear infinite; display: none;
+  }
+  .btn.loading .spinner { display: block; }
+  .btn.loading .label { display: none; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { * { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="./">
+    <span class="brand-mark">PC</span>
+    <span class="brand-text">Pun <span>Codex</span></span>
+  </a>
+  <span class="spacer"></span>
+  <a class="link" href="./design.html">Design System</a>
+  <a class="link" href="./">หน้าแรก</a>
+</header>
+
+<main class="layout">
+  <section class="brand-panel">
+    <span class="eyebrow">โรงเรียนสุรวิทยาคาร</span>
+    <h1>เข้าสู่ระบบ<br>เพื่อดู <em>ทุกกิจกรรม</em></h1>
+    <p class="lede">
+      ใช้บัญชี Google ของโรงเรียนสำหรับครูและผู้ดูแล
+      หรือใช้รหัสนักเรียนกับ PIN สำหรับนักเรียน
+    </p>
+    <ul class="points">
+      <li><span class="tick">✓</span><div><b>ครูและผู้ดูแล</b>จัดการอัลบั้ม รูป และคำขอลบได้</div></li>
+      <li><span class="tick">✓</span><div><b>นักเรียน</b>ค้นรูปของตัวเอง เก็บโปรด และขอลบได้</div></li>
+      <li><span class="tick">✓</span><div><b>ปลอดภัย</b>ตรวจสิทธิ์ที่เซิร์ฟเวอร์ทุกครั้ง (Supabase RLS)</div></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>เข้าสู่ระบบ</h2>
+    <p class="sub">ดำเนินการต่อด้วยบัญชีที่โรงเรียนให้ไว้</p>
+
+    <button class="btn btn-primary" id="googleBtn">
+      <span class="spinner"></span>
+      <span class="gmark" aria-hidden="true">G</span>
+      <span class="label">ดำเนินการต่อด้วย Google</span>
+    </button>
+
+    <div class="divider">หรือใช้รหัสนักเรียน</div>
+
+    <form id="studentForm" novalidate>
+      <label class="field">
+        <span>รหัสนักเรียน</span>
+        <input type="text" id="code" inputmode="numeric" autocomplete="username" placeholder="เช่น 64001" maxlength="10">
+        <span class="helper">รหัสที่โรงเรียนออกให้ (ตัวเลข)</span>
+      </label>
+      <label class="field">
+        <span>PIN</span>
+        <input type="password" id="pin" inputmode="numeric" autocomplete="current-password" placeholder="อย่างน้อย 4 หลัก" maxlength="10">
+      </label>
+
+      <div class="consent">
+        <input type="checkbox" id="consentBox">
+        <label for="consentBox">
+          ฉันได้อ่านและยอมรับ <a href="./privacy.html">นโยบายข้อมูลส่วนบุคคล (PDPA)</a>
+          และยินยอมให้เก็บภาพกิจกรรมของฉันไว้ในระบบของโรงเรียน
+        </label>
+      </div>
+
+      <div class="alert" id="alert" role="status" aria-live="polite">
+        <span aria-hidden="true">⚠</span>
+        <span id="alertText"></span>
+      </div>
+
+      <button class="btn btn-primary" id="studentBtn" type="submit" style="margin-top:16px">
+        <span class="spinner"></span>
+        <span class="label">เข้าสู่ระบบด้วยรหัสนักเรียน</span>
+      </button>
+    </form>
+
+    <div class="foot">
+      <a href="./#faq">ลืม PIN?</a>
+      <a href="./privacy.html">นโยบายข้อมูล</a>
+      <a href="./#contact">ติดต่อโรงเรียน</a>
+      <span class="ver">Pun Codex · โรงเรียนสุรวิทยาคาร</span>
+    </div>
+  </section>
+</main>
+
+<script type="module">
+  // Same Supabase project the app talks to. The publishable key is safe in the
+  // browser: every table is protected by row level security.
+  const SUPABASE_URL = 'https://vnniykarguajyquamznz.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_FRtUeGEpcVF363stKPWdsA_1B43Wd0C';
+  const APP_PATH = './app/';
+
+  const alertBox = document.getElementById('alert');
+  const alertText = document.getElementById('alertText');
+  const googleBtn = document.getElementById('googleBtn');
+  const studentBtn = document.getElementById('studentBtn');
+
+  function fail(message) {
+    alertText.textContent = message;
+    alertBox.classList.add('show');
+  }
+  function clear() {
+    alertBox.classList.remove('show');
+    alertText.textContent = '';
+  }
+  function busy(btn, on) {
+    btn.classList.toggle('loading', on);
+    btn.disabled = on;
+  }
+
+  // ---- Google: real OAuth through Supabase, back to /app/ where supabase_flutter
+  // picks the session out of the URL.
+  googleBtn.addEventListener('click', async () => {
+    clear();
+    if (!document.getElementById('consentBox').checked) {
+      fail('กรุณายอมรับนโยบายข้อมูลส่วนบุคคลก่อน');
+      return;
+    }
+    busy(googleBtn, true);
+    const redirectTo = new URL(APP_PATH, location.href).href;
+    const url =
+      `${SUPABASE_URL}/auth/v1/authorize?provider=google` +
+      `&redirect_to=${encodeURIComponent(redirectTo)}`;
+    location.href = url;
+  });
+
+  // ---- Student: same RPCs the app calls (student_status / student_login).
+  async function rpc(name, body) {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${name}`, {
+      method: 'POST',
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+    const text = await res.text();
+    let data = null;
+    try { data = text ? JSON.parse(text) : null; } catch { data = null; }
+    return { ok: res.ok, status: res.status, data };
+  }
+
+  document.getElementById('studentForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    clear();
+    const code = document.getElementById('code').value.trim();
+    const pin = document.getElementById('pin').value.trim();
+    if (!document.getElementById('consentBox').checked) {
+      fail('กรุณายอมรับนโยบายข้อมูลส่วนบุคคลก่อน');
+      return;
+    }
+    if (!/^[0-9]{4,10}$/.test(code)) {
+      fail('กรอกรหัสนักเรียนเป็นตัวเลข 4–10 หลัก');
+      return;
+    }
+    if (pin.length < 4) {
+      fail('PIN ต้องมีอย่างน้อย 4 หลัก');
+      return;
+    }
+
+    busy(studentBtn, true);
+    try {
+      const status = await rpc('student_status', { p_code: code });
+      const state = status.data;
+      if (state === 'unknown') {
+        fail('ไม่พบรหัสนักเรียนนี้ในระบบ — ตรวจสอบรหัสอีกครั้ง');
+        return;
+      }
+      if (state === 'no_pin') {
+        fail('รหัสนี้ยังไม่ได้ตั้ง PIN — เปิดแอปเพื่อตั้ง PIN ครั้งแรก');
+        return;
+      }
+      const login = await rpc('student_login', { p_code: code, p_pin: pin });
+      const result = login.data;
+      const ok = result && (result.status === 'ok' || result.Status === 'ok' ||
+                 (result.student && !result.error));
+      if (!ok) {
+        const reason = result?.status ?? result?.error ?? 'wrong_pin';
+        fail(reason === 'wrong_pin'
+          ? 'PIN ไม่ถูกต้อง'
+          : `เข้าสู่ระบบไม่สำเร็จ (${reason})`);
+        return;
+      }
+      // A browser has no access to the app's local session, so send the visitor
+      // to the web app with the code prefilled; the PIN is asked there once.
+      sessionStorage.setItem('pun-codex-login-code', code);
+      location.href = `${APP_PATH}?code=${encodeURIComponent(code)}`;
+    } catch (error) {
+      fail('เชื่อมต่อเซิร์ฟเวอร์ไม่ได้ — ตรวจอินเทอร์เน็ตแล้วลองใหม่');
+    } finally {
+      busy(studentBtn, false);
+    }
+  });
+</script>
+</body>
+</html>
