@@ -1,16 +1,17 @@
 {
   "app": "puncodex-webapp",
   "runtime": "react",
-  "version": "1.25.0",
+  "version": "1.26.0",
   "replaces": "flutter-web",
-  "builtAt": "2026-11-17T12:52:53Z",
-  "sourceCommit": "dc160f4",
-  "bytes": 8740579,
+  "builtAt": "2026-11-17T13:21:34Z",
+  "sourceCommit": "9bd5796",
+  "bytes": 8753577,
   "files": [
+    "apple-touch-icon.png",
     "assets/face-api.esm-DMaQY5kn.js",
     "assets/face-worker-CuGx7rWF.js",
-    "assets/index-BVqh8GdP.js",
-    "assets/index-zx45Hepg.css",
+    "assets/index-DGuwmOX6.js",
+    "assets/index-hyLuKo1A.css",
     "assets/supabase-D5xPhma_.js",
     "assets/vendor-BRnhmgIC.js",
     "face-models/face_landmark_68_tiny_model-weights_manifest.json",
@@ -19,6 +20,11 @@
     "face-models/face_recognition_model.bin",
     "face-models/tiny_face_detector_model-weights_manifest.json",
     "face-models/tiny_face_detector_model.bin",
-    "index.html"
+    "icon-192.png",
+    "icon-512.png",
+    "icon-maskable-512.png",
+    "index.html",
+    "manifest.webmanifest",
+    "sw.js"
   ]
 }

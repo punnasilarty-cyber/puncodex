@@ -1,0 +1,19 @@
+{
+  "name": "Pun Codex — คลังภาพกิจกรรม โรงเรียนสุรวิทยาคาร",
+  "short_name": "Pun Codex",
+  "description": "คลังภาพกิจกรรมของโรงเรียน ดูอัลบั้ม บันทึกภาพโปรด และค้นด้วยใบหน้า",
+  "start_url": "./#/",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#17150f",
+  "theme_color": "#17150f",
+  "lang": "th",
+  "dir": "ltr",
+  "categories": ["education", "photo"],
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
