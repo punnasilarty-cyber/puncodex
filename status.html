@@ -96,6 +96,19 @@
   </div>
 
   <div class="card">
+    <h2>ประวัติการตรวจ (จากเบราว์เซอร์นี้)</h2>
+    <p class="hint">
+      ทุกครั้งที่เปิดหน้านี้ ผลจะถูกเก็บไว้ในเครื่องคุณ (ไม่ส่งขึ้นเซิร์ฟเวอร์) เพื่อดูว่า
+      บริการตอบสม่ำเสมอหรือไม่
+    </p>
+    <table>
+      <thead><tr><th>ช่วงเวลา</th><th>ผล</th><th>เวลา</th></tr></thead>
+      <tbody id="history"><tr><td colspan="3" class="hint">ยังไม่มีประวัติ — กด "ตรวจอีกครั้ง"</td></tr></tbody>
+    </table>
+    <p class="hint" id="uptime-line"></p>
+  </div>
+
+  <div class="card">
     <h2>เวอร์ชันที่ให้บริการ</h2>
     <table>
       <tbody>
@@ -143,6 +156,7 @@
   }
 
   async function run() {
+    const startedAll = performance.now();
     const tbody = document.getElementById('checks');
     tbody.innerHTML = '';
     let healthy = 0;
@@ -173,6 +187,8 @@
     }
 
     const total = CHECKS.length;
+    saveHistory({ at: new Date().toISOString(), healthy, total, totalMs: Math.round(performance.now() - startedAll) });
+    renderHistory();
     const dot = document.getElementById('overall-dot');
     const text = document.getElementById('overall-text');
     dot.className = 'dot ' + (healthy === total ? 'ok' : healthy > 0 ? 'warn' : 'bad');
@@ -195,7 +211,55 @@
     } catch { /* the version block is informational */ }
   }
 
+  // Uptime history, kept in localStorage: this page has no backend of its own, so the
+  // record is per device - which is honest and still answers "does it fail often?".
+  const HISTORY_KEY = 'puncodex-status-history';
+
+  function readHistory() {
+    try {
+      const raw = localStorage.getItem(HISTORY_KEY);
+      const list = raw ? JSON.parse(raw) : [];
+      return Array.isArray(list) ? list : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function saveHistory(entry) {
+    const list = readHistory();
+    list.push(entry);
+    while (list.length > 50) list.shift();
+    try {
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(list));
+    } catch {
+      /* private mode */
+    }
+  }
+
+  function renderHistory() {
+    const list = readHistory().slice().reverse();
+    const body = document.getElementById('history');
+    const line = document.getElementById('uptime-line');
+    if (!body) return;
+    if (list.length === 0) {
+      body.innerHTML = '<tr><td colspan="3" class="hint">ยังไม่มีประวัติ — กด "ตรวจอีกครั้ง"</td></tr>';
+      if (line) line.textContent = '';
+      return;
+    }
+    body.innerHTML = list
+      .map((entry) => {
+        const ok = entry.healthy === entry.total;
+        return `<tr><td>${new Date(entry.at).toLocaleString('th-TH')}</td>` +
+          `<td><span class="pill ${ok ? 'ok' : 'bad'}">${entry.healthy}/${entry.total}</span></td>` +
+          `<td>${entry.totalMs} ms</td></tr>`;
+      })
+      .join('');
+    const okRuns = list.filter((entry) => entry.healthy === entry.total).length;
+    if (line) line.textContent = `อัตราปกติ ${Math.round((okRuns / list.length) * 100)}% จาก ${list.length} ครั้งล่าสุด`;
+  }
+
   document.getElementById('rerun').addEventListener('click', run);
+  renderHistory();
   run();
 </script>
 </body>
