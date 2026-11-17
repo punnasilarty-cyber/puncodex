@@ -6,11 +6,6 @@
   <url><loc>https://punnasilarty-cyber.github.io/puncodex/privacy.html</loc></url>
   <url><loc>https://punnasilarty-cyber.github.io/puncodex/terms.html</loc></url>
   <url>
-    <loc>https://punnasilarty-cyber.github.io/puncodex/design.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://punnasilarty-cyber.github.io/puncodex/login.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
