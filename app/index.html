@@ -109,6 +109,16 @@
       var el = document.getElementById('loading');
       if (el) el.remove();
     });
+
+    // Installable app + offline shell. Flutter's own worker unregisters itself,
+    // so web/sw.js keeps the shell and leaves Supabase traffic alone.
+    if ('serviceWorker' in navigator && location.protocol === 'https:') {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').catch(function () {
+          /* private mode or blocked by policy: the app still works online */
+        });
+      });
+    }
   </script>
 </body>
 </html>
