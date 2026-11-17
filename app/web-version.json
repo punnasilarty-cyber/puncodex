@@ -1,9 +1,16 @@
-{
-  "versionName": "2.0.9",
-  "versionCode": 45,
-  "commit": "812e4a7",
-  "builtAt": "2026-11-17T02:19:47.781Z",
-  "baseHref": "/puncodex/app/",
-  "files": 60,
-  "bytes": 35707415
+﻿{
+    "app":  "puncodex-webapp",
+    "runtime":  "react",
+    "version":  "1.0.0",
+    "replaces":  "flutter-web",
+    "builtAt":  "2026-11-17T04:11:08Z",
+    "sourceCommit":  "36fd084",
+    "bytes":  496282,
+    "files":  [
+                  "index.html",
+                  "assets/index-C1RZ0jux.js",
+                  "assets/index-DdUSK8uE.css",
+                  "assets/supabase-D5xPhma_.js",
+                  "assets/vendor-BRnhmgIC.js"
+              ]
 }
