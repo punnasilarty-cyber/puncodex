@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ความปลอดภัยและความเป็นส่วนตัว — Pun Codex</title>
+<meta name="description" content="Pun Codex เก็บข้อมูลอะไร เก็บที่ไหน ใครเห็นได้บ้าง สิทธิของเจ้าของข้อมูล และช่องทางแจ้งลบหรือรายงานช่องโหว่">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Prompt:wght@400;500;600&family=Urbanist:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#0b1f14; --ink-soft:#35513f; --muted:#617a6b;
+    --green:#1b6b3f; --green-deep:#0e2a1a; --mint:#5ccf92; --gold:#f4c430;
+    --bg:#f2f8f2; --surface:rgba(255,255,255,.8); --line:rgba(27,107,63,.14);
+    --body:"Inter","Prompt",system-ui,sans-serif; --display:"Urbanist","Prompt",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;color:var(--ink);font-family:var(--body);line-height:1.7;background:
+    radial-gradient(900px 620px at 6% -12%,rgba(244,196,48,.14),transparent 62%),
+    radial-gradient(820px 720px at 102% 8%,rgba(92,207,146,.18),transparent 64%),var(--bg);
+    -webkit-font-smoothing:antialiased}
+  a{color:var(--green)}
+  header.top{display:flex;align-items:center;gap:14px;padding:16px 32px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+  .brand-mark{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;
+    background:linear-gradient(160deg,#17422f,var(--green-deep));color:#fff;font-family:var(--display);font-weight:800;font-size:13px}
+  .brand-text{font-family:var(--display);font-weight:700;font-size:15.5px}
+  .brand-text span{color:var(--green)}
+  header.top .spacer{flex:1}
+  header.top a.link{font-size:13.5px;text-decoration:none;color:var(--ink-soft);margin-left:14px}
+  main{max-width:820px;margin:0 auto;padding:18px 24px 64px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 13px;border-radius:999px;
+    border:1px solid var(--line);background:rgba(255,255,255,.72);color:var(--green);
+    font-size:12.5px;font-weight:600;letter-spacing:.06em}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(92,207,146,.18)}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.2vw,46px);line-height:1.14;
+    letter-spacing:-.02em;margin:16px 0 10px}
+  h1 em{font-style:normal;color:var(--green)}
+  .lede{color:var(--ink-soft);font-size:15.5px;margin:0 0 26px;max-width:62ch}
+  h2{font-family:var(--display);font-size:22px;margin:34px 0 8px;letter-spacing:-.01em}
+  h3{font-size:15px;margin:18px 0 4px}
+  p,li{font-size:14.5px;color:var(--ink-soft)}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px 24px;margin:14px 0;
+    box-shadow:0 18px 40px -34px rgba(11,31,20,.5)}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px}
+  th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:.92em;background:rgba(27,107,63,.07);
+    padding:1px 5px;border-radius:4px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .tile{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:rgba(255,255,255,.6)}
+  .tile b{display:block;font-size:13.5px;margin-bottom:3px}
+  .tile p{margin:0;font-size:12.5px;color:var(--muted)}
+  .callout{border-left:3px solid var(--gold);background:rgba(244,196,48,.1);padding:12px 16px;border-radius:0 12px 12px 0;font-size:13.5px}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:22px 24px;font-size:12.5px;color:var(--muted)}
+  footer .inner{max-width:820px;margin:0 auto;display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
+  footer a{text-decoration:none}
+  @media (prefers-reduced-motion: reduce){*{transition-duration:.001ms!important;animation-duration:.001ms!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="./"><span class="brand-mark">PC</span><span class="brand-text">Pun <span>Codex</span></span></a>
+  <span class="spacer"></span>
+  <a class="link" href="./status.html">สถานะระบบ</a>
+  <a class="link" href="./privacy.html">PDPA</a>
+  <a class="link" href="./">หน้าแรก</a>
+</header>
+
+<main>
+  <span class="eyebrow">ความปลอดภัย · ความเป็นส่วนตัว</span>
+  <h1>ข้อมูลของนักเรียน <em>อยู่ในความดูแลของโรงเรียน</em></h1>
+  <p class="lede">
+    หน้านี้อธิบายว่า Pun Codex เก็บข้อมูลอะไร เก็บไว้ที่ไหน ใครเห็นได้ สิทธิของเจ้าของข้อมูล
+    และช่องทางติดต่อเมื่อต้องการให้แก้ไขหรือลบข้อมูล
+  </p>
+
+  <h2>1 · เก็บข้อมูลอะไร และเพราะอะไร</h2>
+  <table>
+    <thead><tr><th>ข้อมูล</th><th>ใช้ทำอะไร</th><th>เก็บที่ไหน</th></tr></thead>
+    <tbody>
+      <tr><td>รหัสนักเรียน · ชื่อ · ชั้น</td><td>ยืนยันตัวตน และแสดงภาพที่เป็นของนักเรียนคนนั้น</td><td>ฐานข้อมูลของโรงเรียน (Supabase)</td></tr>
+      <tr><td>PIN (รหัสเข้าใช้)</td><td>ป้องกันการเข้าใช้แทนกัน</td><td>เก็บเป็น <b>bcrypt hash</b> — อ่านค่าจริงไม่ได้แม้แต่ผู้ดูแล</td></tr>
+      <tr><td>ภาพกิจกรรม</td><td>คลังภาพของโรงเรียน</td><td>Storage ส่วนตัวของโรงเรียน (เข้าได้ผ่าน signed URL อายุ 1 ชั่วโมง)</td></tr>
+      <tr><td>ภาพโปรด · คำขอแจ้งลบ</td><td>ให้นักเรียนเก็บภาพของตัวเองและขอลบได้</td><td>ฐานข้อมูลของโรงเรียน</td></tr>
+      <tr><td>อีเมล Google (ครู)</td><td>ยืนยันสิทธิ์ครู/ผู้ดูแล</td><td>ฐานข้อมูลของโรงเรียน</td></tr>
+      <tr><td>ข้อมูลใบหน้า (เมื่อใช้ค้นด้วยใบหน้า)</td><td>ค้นว่ารูปใดมีใบหน้าใกล้เคียง</td><td><b>ไม่เก็บในเซิร์ฟเวอร์</b> — อยู่ในเบราว์เซอร์ (IndexedDB) และล้างได้</td></tr>
+      <tr><td>บันทึกการใช้งาน (audit)</td><td>ตรวจสอบว่าใครแก้อะไร</td><td>ฐานข้อมูลของโรงเรียน · เก็บเฉพาะการกระทำ ไม่เก็บ IP</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <b>ไม่เก็บ:</b> IP address · user-agent · ตำแหน่งที่ตั้ง · ประวัติการเข้าชม · ไม่มี analytics หรือ advertising pixel ในเว็บนี้
+  </div>
+
+  <h2>2 · ใครเห็นข้อมูลได้บ้าง</h2>
+  <div class="grid">
+    <div class="tile"><b>นักเรียน</b><p>เห็นเฉพาะข้อมูลที่ผูกกับตัวเอง — รูปโปรดของตัวเอง และสถานะคำขอของตัวเอง</p></div>
+    <div class="tile"><b>ครู</b><p>เห็นอัลบั้ม รูป และคำขอแจ้งลบ เพื่อดูแลคลังภาพ</p></div>
+    <div class="tile"><b>ผู้ดูแลระบบ</b><p>เห็นรายชื่อนักเรียน การตั้งค่า และบันทึกการใช้งาน</p></div>
+    <div class="tile"><b>ผู้เยี่ยมชม</b><p>ดูหน้าเว็บได้ แต่ไม่เห็นอัลบั้ม รูป และใช้ค้นด้วยใบหน้าไม่ได้</p></div>
+  </div>
+  <p>
+    การเห็นหรือไม่เห็นถูกบังคับที่ฐานข้อมูลด้วย <b>Row Level Security (RLS)</b> ไม่ใช่แค่ซ่อนปุ่มบนหน้าจอ
+    — แม้มีคนแก้ JavaScript ในเบราว์เซอร์ ก็ยังดึงข้อมูลที่ไม่มีสิทธิ์ไม่ได้
+  </p>
+
+  <h2>3 · มาตรการด้านความปลอดภัย</h2>
+  <table>
+    <thead><tr><th>ชั้น</th><th>รายละเอียด</th></tr></thead>
+    <tbody>
+      <tr><td>การเชื่อมต่อ</td><td>HTTPS ทั้งหมด (GitHub Pages + Supabase) — ไม่มี HTTP</td></tr>
+      <tr><td>สิทธิ์ข้อมูล</td><td>RLS ทุกตาราง · ครูต้องผ่าน 3 ชั้น (allowlist · profiles · บทบาทตรงกัน)</td></tr>
+      <tr><td>รหัสผ่านนักเรียน</td><td>bcrypt (pgcrypto) · ผิด 5 ครั้งล็อก 15 นาที</td></tr>
+      <tr><td>ไฟล์ภาพ</td><td>Bucket ส่วนตัว · อ่านผ่าน signed URL อายุ 1 ชั่วโมง · ไม่มี public URL</td></tr>
+      <tr><td>การลบรูป</td><td>ย้ายเข้าถังขยะ 30 วันก่อนลบถาวร — กู้คืนได้หากลบผิด</td></tr>
+      <tr><td>การค้นด้วยใบหน้า</td><td>ประมวลผลในเบราว์เซอร์ · ไม่ส่งภาพหรือค่าลายนิ้วหน้าขึ้นเซิร์ฟเวอร์</td></tr>
+      <tr><td>กุญแจ</td><td>เบราว์เซอร์ถือเฉพาะ publishable key · service role key ไม่เคยอยู่ในเว็บ</td></tr>
+      <tr><td>การตรวจสอบ</td><td>audit log ทุกการกระทำของครู/ผู้ดูแล · ดูได้ที่หน้า “ประวัติการใช้งาน”</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4 · สิทธิของเจ้าของข้อมูล (PDPA)</h2>
+  <ul>
+    <li><b>เข้าถึง</b> — นักเรียนเห็นภาพของตัวเองได้ในหน้า “ค้นด้วยใบหน้า” หรือขอดูจากครู</li>
+    <li><b>แก้ไข</b> — แจ้งครูเพื่อแก้ชื่อ/ชั้น/รหัสที่ผิด</li>
+    <li><b>ลบ</b> — กด “ขอแจ้งลบ” ที่รูปนั้น ครูจะตรวจและอนุมัติ หรือติดต่อครูโดยตรง</li>
+    <li><b>ถอนความยินยอม</b> — แจ้งครูเพื่อลบข้อมูลออกจากระบบ (เก็บเท่าที่กฎหมายกำหนด)</li>
+    <li><b>คัดค้าน/จำกัดการใช้</b> — แจ้งเหตุผลกับโรงเรียนได้ตลอด</li>
+  </ul>
+
+  <h2>5 · ระยะเวลาเก็บข้อมูล</h2>
+  <p>
+    ภาพกิจกรรมเก็บตลอดปีการศึกษาและต่อเนื่องเพื่อประโยชน์ของศิษย์เก่า · คำขอแจ้งลบเก็บเพื่อการตรวจสอบ ·
+    รูปในถังขยะ 30 วัน · ค่าลายนิ้วหน้าในเบราว์เซอร์อยู่จนกว่าผู้ใช้กดล้าง (ปุ่ม “ล้างดัชนี”)
+  </p>
+
+  <h2>6 · รายงานช่องโหว่</h2>
+  <div class="card">
+    <p>
+      ถ้าพบช่องโหว่หรือพฤติกรรมที่น่าสงสัย กรุณาแจ้งโดยไม่เปิดเผยข้อมูลนักเรียนต่อสาธารณะ:
+    </p>
+    <ul>
+      <li>ช่องทาง: ครูผู้ดูแลระบบของโรงเรียน หรือช่องทางติดต่อในหน้าแรก</li>
+      <li>สิ่งที่ควรส่ง: หน้าที่พบ · ขั้นตอนที่ทำซ้ำได้ · ผลที่เกิดขึ้น (ไม่ต้องแนบข้อมูลส่วนตัวจริง)</li>
+      <li>เราจะตอบกลับและแจ้งความคืบหน้าภายใน 7 วันทำการ</li>
+    </ul>
+    <p style="margin-bottom:0">
+      ข้อมูลเครื่องอ่านได้อยู่ที่ <a href="./.well-known/security.txt"><code>/.well-known/security.txt</code></a>
+    </p>
+  </div>
+
+  <h2>7 · ติดต่อ</h2>
+  <p>
+    โรงเรียนสุรวิทยาคาร จ.สุรินทร์ · ผ่านครูผู้ดูแลระบบ หรือช่องทางติดต่อที่หน้าแรกของเว็บไซต์
+  </p>
+
+  <footer>
+    <div class="inner">
+      <span>© 2569 Pun Codex · โรงเรียนสุรวิทยาคาร</span>
+      <span>
+        <a href="./privacy.html">PDPA</a> ·
+        <a href="./terms.html">ข้อกำหนด</a> ·
+        <a href="./status.html">สถานะระบบ</a> ·
+        <a href="./">หน้าแรก</a>
+      </span>
+    </div>
+  </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Pun Codex — security contact
+# https://punnasilarty-cyber.github.io/puncodex/security.html
+
+Contact: https://punnasilarty-cyber.github.io/puncodex/security.html
+Expires: 2027-11-17T00:00:00.000Z
+Preferred-Languages: th, en
+Canonical: https://punnasilarty-cyber.github.io/puncodex/.well-known/security.txt
+
+# Reporting
+# - Please do not publish student data when reporting an issue.
+# - Include the page, reproducible steps and the observed effect.
+# - We acknowledge within 7 working days.
+#
+# Scope: the static site (/puncodex/) and the web app (/puncodex/app/).
+# The Supabase project and Google OAuth configuration are operated by the school.
