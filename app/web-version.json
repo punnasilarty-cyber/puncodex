@@ -1,16 +1,23 @@
 {
   "app": "puncodex-webapp",
   "runtime": "react",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "replaces": "flutter-web",
-  "builtAt": "2026-11-17T09:09:31Z",
-  "sourceCommit": "519e6d5",
-  "bytes": 565037,
+  "builtAt": "2026-11-17T09:21:03Z",
+  "sourceCommit": "876cc3c",
+  "bytes": 8650865,
   "files": [
-    "assets/index-B_8bLkLA.css",
-    "assets/index-bllDMCJc.js",
+    "assets/face-api.esm-DMaQY5kn.js",
+    "assets/index-DPhPy7Nh.js",
+    "assets/index-Dw30yRn-.css",
     "assets/supabase-D5xPhma_.js",
     "assets/vendor-BRnhmgIC.js",
+    "face-models/face_landmark_68_tiny_model-weights_manifest.json",
+    "face-models/face_landmark_68_tiny_model.bin",
+    "face-models/face_recognition_model-weights_manifest.json",
+    "face-models/face_recognition_model.bin",
+    "face-models/tiny_face_detector_model-weights_manifest.json",
+    "face-models/tiny_face_detector_model.bin",
     "index.html"
   ]
 }
