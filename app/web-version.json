@@ -1,9 +1,9 @@
 {
   "versionName": "2.0.9",
   "versionCode": 45,
-  "commit": "6f81d5f",
-  "builtAt": "2026-11-17T01:58:16.091Z",
+  "commit": "ca237ec",
+  "builtAt": "2026-11-17T02:17:03.026Z",
   "baseHref": "/puncodex/app/",
   "files": 60,
-  "bytes": 35698072
+  "bytes": 35707420
 }
