@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -8,9 +8,6 @@
     The path provided below has to start and end with a slash "/" in order for
     it to work correctly.
 
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
@@ -18,33 +15,85 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
 
   <!--
-    Uncomment the tag below to lay the app out underneath the parts of the
-    screen that the device obstructs, such as a display cutout, the rounded
-    corners of the screen, or a home indicator.
-
-    Without it, the browser keeps the app clear of them, and `SafeArea` and
-    `MediaQuery.paddingOf` report no padding. With it, the app covers the whole
-    screen, and it is up to the app to keep its own content out of the way,
-    which is what `SafeArea` is for.
+    Required: without it a phone lays the app out at the browser's default
+    ~980px viewport and then crops the right-hand side (the login card was cut
+    off on a 390px screen). viewport-fit=cover lets SafeArea see the cutout.
   -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <meta name="description" content="Pun Codex — คลังภาพกิจกรรมโรงเรียนสุรวิทยาคาร สำหรับครู นักเรียน และผู้ปกครอง">
+  <meta name="theme-color" content="#0E3B24">
+  <meta name="color-scheme" content="dark light">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="surawit_photo_archive">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pun Codex">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>surawit_photo_archive</title>
+  <title>Pun Codex — โรงเรียนสุรวิทยาคาร</title>
   <link rel="manifest" href="manifest.json">
+
+  <style>
+    /* Shown until Flutter paints; matches the app's Midnight Glass canvas so the
+       first frame is not a white flash. */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #0B1F14;
+    }
+    #loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      font-family: "Prompt", system-ui, -apple-system, sans-serif;
+      color: #D8EDE0;
+      background: radial-gradient(120% 120% at 50% 0%, #123524 0%, #0B1F14 70%);
+    }
+    #loading .mark {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+    }
+    #loading .mark span { color: #E7C766; }
+    #loading .bar {
+      width: 132px;
+      height: 3px;
+      border-radius: 3px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    #loading .bar::after {
+      content: "";
+      display: block;
+      width: 40%;
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #7BE3B0, #E7C766);
+      animation: slide 1.1s ease-in-out infinite;
+    }
+    @keyframes slide {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(260%); }
+    }
+  </style>
 </head>
 <body>
+  <div id="loading">
+    <div class="mark">Pun <span>Codex</span></div>
+    <div class="bar"></div>
+  </div>
+
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
@@ -54,5 +103,12 @@
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
   <script src="flutter_bootstrap.js" async></script>
+  <script>
+    // Remove the static splash as soon as Flutter reports the first frame.
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('loading');
+      if (el) el.remove();
+    });
+  </script>
 </body>
 </html>
