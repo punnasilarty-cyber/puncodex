@@ -1,10 +1,10 @@
 {
   "app": "puncodex-webapp",
   "runtime": "react",
-  "version": "5.7.0",
+  "version": "5.8.0",
   "replaces": "flutter-web",
-  "builtAt": "2026-11-19T14:02:42Z",
-  "sourceCommit": "5b80f74",
+  "builtAt": "2026-11-19T14:12:10Z",
+  "sourceCommit": "c1d4ac7",
   "bytes": 36935782,
   "files": [
     "apple-touch-icon.png",
