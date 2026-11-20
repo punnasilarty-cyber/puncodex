@@ -1,12 +1,13 @@
 {
-  "version": "5.3.3",
-  "sourceCommit": "4c3714be0e155e3ad1a2788766f96b4b8501ad7a",
-  "bytes": 39280556,
+  "version": "5.3.4",
+  "sourceCommit": "3a839121cb2c4365529f0e05e14c28df49bbf5a7",
+  "bytes": 41609294,
   "files": [
     "apple-touch-icon.png",
     "assets\\face-worker-CuGx7rWF.js",
     "assets\\index-B54nRIJR.js",
     "assets\\index-B880_DmQ.js",
+    "assets\\index-Bc8tFb-S.js",
     "assets\\index-_y86llgP.css",
     "assets\\supabase-D5xPhma_.js",
     "assets\\vendor-BRnhmgIC.js",
@@ -28,5 +29,5 @@
     "sw.js",
     "web-version.json"
   ],
-  "updatedAt": "2026-11-20T07:06:53.001Z"
+  "updatedAt": "2026-11-20T07:32:49.275Z"
 }
