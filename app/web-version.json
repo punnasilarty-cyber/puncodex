@@ -1,33 +1,6 @@
-{
-  "version": "5.3.4",
-  "sourceCommit": "3a839121cb2c4365529f0e05e14c28df49bbf5a7",
-  "bytes": 41609294,
-  "files": [
-    "apple-touch-icon.png",
-    "assets\\face-worker-CuGx7rWF.js",
-    "assets\\index-B54nRIJR.js",
-    "assets\\index-B880_DmQ.js",
-    "assets\\index-Bc8tFb-S.js",
-    "assets\\index-_y86llgP.css",
-    "assets\\supabase-D5xPhma_.js",
-    "assets\\vendor-BRnhmgIC.js",
-    "face-models\\face_landmark_68_tiny_model-weights_manifest.json",
-    "face-models\\face_landmark_68_tiny_model.bin",
-    "face-models\\face_recognition_model-weights_manifest.json",
-    "face-models\\face_recognition_model.bin",
-    "face-models\\tiny_face_detector_model-weights_manifest.json",
-    "face-models\\tiny_face_detector_model.bin",
-    "face-models-arcface\\det_500m.onnx",
-    "face-models-arcface\\w600k_mbf.onnx",
-    "icon-192.png",
-    "icon-512.png",
-    "icon-maskable-512.png",
-    "index.html",
-    "manifest.webmanifest",
-    "ort\\ort-wasm-simd-threaded.mjs",
-    "ort\\ort-wasm-simd-threaded.wasm",
-    "sw.js",
-    "web-version.json"
-  ],
-  "updatedAt": "2026-11-20T07:32:49.275Z"
+﻿{
+  "version": "5.4.0",
+  "sourceCommit": "eb3aea042c0b4e20eb8fe2d081e45464bfce83c0",
+  "bytes": 36957994,
+  "files": 23
 }
