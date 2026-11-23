@@ -1,6 +1,32 @@
 {
-  "version": "5.8.8",
-  "sourceCommit": "b06a6059a7fb78419b20ad45cf99947bc1eafcf4",
-  "bytes": 36952493,
-  "files": 23
+  "app": "puncodex-webapp",
+  "runtime": "react",
+  "version": "5.8.9",
+  "sourceCommit": "5f96262",
+  "builtAt": "2026-11-23T13:10:00Z",
+  "bytes": 36952508,
+  "files": [
+    "apple-touch-icon.png",
+    "assets/face-worker-CuGx7rWF.js",
+    "assets/index-_y86llgP.css",
+    "assets/index-iJ0R9o9I.js",
+    "assets/supabase-D5xPhma_.js",
+    "assets/vendor-BRnhmgIC.js",
+    "face-models/face_landmark_68_tiny_model.bin",
+    "face-models/face_landmark_68_tiny_model-weights_manifest.json",
+    "face-models/face_recognition_model.bin",
+    "face-models/face_recognition_model-weights_manifest.json",
+    "face-models/tiny_face_detector_model.bin",
+    "face-models/tiny_face_detector_model-weights_manifest.json",
+    "face-models-arcface/det_500m.onnx",
+    "face-models-arcface/w600k_mbf.onnx",
+    "icon-192.png",
+    "icon-512.png",
+    "icon-maskable-512.png",
+    "index.html",
+    "manifest.webmanifest",
+    "ort/ort-wasm-simd-threaded.mjs",
+    "ort/ort-wasm-simd-threaded.wasm",
+    "sw.js"
+  ]
 }
