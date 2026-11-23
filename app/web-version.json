@@ -1,9 +1,9 @@
-﻿{
+{
   "app": "puncodex-webapp",
   "runtime": "react",
-  "version": "5.9.1",
-  "sourceCommit": "7fd6e30",
-  "builtAt": "2026-11-23T13:07:06Z",
+  "version": "5.9.2",
+  "sourceCommit": "3acef45",
+  "builtAt": "2026-11-23T13:20:00Z",
   "bytes": 36954094,
   "files": [
     "apple-touch-icon.png",
