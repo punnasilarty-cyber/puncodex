@@ -1,14 +1,14 @@
 {
   "app": "puncodex-webapp",
   "runtime": "react",
-  "version": "5.9.6",
-  "sourceCommit": "22a0f0b",
-  "builtAt": "2026-11-23T15:25:00Z",
+  "version": "5.9.7",
+  "sourceCommit": "b7352a9",
+  "builtAt": "2026-11-24T05:20:00Z",
   "bytes": 36953352,
   "files": [
     "apple-touch-icon.png",
     "assets/face-worker-CuGx7rWF.js",
-    "assets/index-D8Y_o8Q9.js",
+    "assets/index-CmEGFKdn.js",
     "assets/index-_y86llgP.css",
     "assets/supabase-D5xPhma_.js",
     "assets/vendor-BRnhmgIC.js",
